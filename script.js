@@ -1,7 +1,7 @@
 // script.js - Beginner-friendly JS with comments
 
 // Replace with your Google Client ID from https://console.cloud.google.com/apis/credentials
-const GOOGLE_CLIENT_ID = '71261666327-ic9b6rf2dfmn370hocdhgurs5ia3sg6s.apps.googleusercontent.com'; // Get this from Google Console
+ // Get this from Google Console
 
 let user = null;
 let habits = JSON.parse(localStorage.getItem('habits')) || []; // Load habits from localStorage
