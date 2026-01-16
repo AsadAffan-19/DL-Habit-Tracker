@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL Habit Tracker</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Button -->
+        <div id="login-section" class="login-section">
+            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+        </div>
+
+        <!-- Main App - Hidden initially -->
+        <div id="app-section" class="app-section hidden">
+            <header>
+                <h1>DL Habit Tracker</h1>
+                <button id="logout-btn">Logout</button>
+                <span id="user-name"></span>
+            </header>
+
+            <div class="main-grid">
+                <!-- Daily Progress Graph -->
+                <div class="graph-card">
+                    <h3>Daily Progress Graph</h3>
+                    <canvas id="daily-graph" width="300" height="100"></canvas>
+                </div>
+
+                <!-- Habit Grid -->
+                <div class="habits-section">
+                    <div class="section-header">
+                        <h3>Habits</h3>
+                        <input type="text" id="new-habit" placeholder="Add new habit...">
+                        <button id="add-habit">Add</button>
+                    </div>
+                    <div id="habits-grid" class="habits-grid"></div>
+                </div>
+
+                <!-- Right Panel: Monthly Success, Top Habits, Monthly Wrapped -->
+                <div class="right-panel">
+                    <!-- Monthly Success -->
+                    <div class="panel-card monthly-success">
+                        <h4>Monthly Success</h4>
+                        <canvas id="monthly-circle" width="100" height="100"></canvas>
+                        <span id="monthly-percent">0%</span>
+                    </div>
+
+                    <!-- Top Habits -->
+                    <div class="panel-card top-habits">
+                        <h4>Top Habits</h4>
+                        <ul id="top-habits-list"></ul>
+                    </div>
+
+                    <!-- Monthly Wrapped Button -->
+                    <button id="monthly-wrapped" class="wrapped-btn">MONTH WRAPPED</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Monthly Wrapped Popup -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Monthly Update</h2>
+            <div id="popup-content"></div>
+            <button id="download-png">Download PNG</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
